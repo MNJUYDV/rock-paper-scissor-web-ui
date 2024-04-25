@@ -67,11 +67,11 @@ button.active {
 
 .reset-button {
   margin-top: 20px;
+  margin-left: -13px;
   padding: 10px 20px;
   font-size: 16px;
   background-color: #52a6df;
 }
-
 
 .make-selection {
   margin-bottom: 20px;
