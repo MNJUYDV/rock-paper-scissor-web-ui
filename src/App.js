@@ -27,13 +27,18 @@ function App() {
   const [playerChoice, setPlayerChoice] = useState('rock');
   const [computerChoice, setComputerChoice] = useState('rock');
   const [activeButton, setActiveButton] = useState(null);
+  
 
   const play = (choice) => {
-    const computerRandomChoice = getRandomChoice();
-    setPlayerChoice(choice);
-    setActiveButton(choice);
-    setComputerChoice(computerRandomChoice);
-    determineWinner(choice, computerRandomChoice);
+    setPlayerChoice('rock');
+    setComputerChoice('rock');
+    setTimeout(() => {
+      const computerRandomChoice = getRandomChoice();
+      setPlayerChoice(choice);
+      setComputerChoice(computerRandomChoice);
+      determineWinner(choice, computerRandomChoice);
+    }, 200);
+
   };
 
   const getRandomChoice = () => {
