@@ -9,6 +9,10 @@ import rockImageInverted from './images/rockI.png';
 import paperImageInverted from './images/paperI.png';
 import scissorsImageInverted from './images/scissorI.png';
 
+import winSound from './sounds/win.mp3';
+import loseSound from './sounds/lose.mp3';
+import tieSound from './sounds/tie.mp3';
+
 const playerChoices = {
   rock: rockImage,
   paper: paperImage,
@@ -27,6 +31,10 @@ function App() {
   const [playerChoice, setPlayerChoice] = useState('rock');
   const [computerChoice, setComputerChoice] = useState('rock');
   const [gameResult, setGameResult] = useState('Start the game');
+
+  const winAudio = new Audio(winSound);
+  const loseAudio = new Audio(loseSound);
+  const tieAudio = new Audio(tieSound);
 
   const play = (choice) => {
     setPlayerChoice('rock');
@@ -48,6 +56,7 @@ function App() {
   const determineWinner = (playerChoice, computerChoice) => {
     if (playerChoice === computerChoice) {
       setGameResult("It's a Tie!");
+      tieAudio.play();
       return;
     }
 
@@ -58,9 +67,11 @@ function App() {
     ) {
       setPlayerScore(playerScore + 1);
       setGameResult('You Win!');
+      winAudio.play();
     } else {
       setComputerScore(computerScore + 1);
       setGameResult('You Lose!');
+      loseAudio.play();
     }
   };
 
