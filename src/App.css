@@ -15,11 +15,11 @@ h1 {
 
 .player-score
 {
-  margin: 0 20px;
+  margin: 0 639px;
 }
 
 .computer-score {
-  margin: 0 20px;
+  margin-inline: auto;
 }
 
 
@@ -73,4 +73,17 @@ button.active {
   padding: 10px 20px;
   font-size: 16px;
   background-color: #52a6df;
+}
+
+
+.make-selection {
+  margin-bottom: 20px;
+  margin-top: 23px;
+}
+
+.game-result {
+  font-weight: bold;
+  font-size: 24px;
+  color: red; /* Change the color to make it flashy */
+  margin-top: 20px; /* Add some margin to separate it from the selection */
 }

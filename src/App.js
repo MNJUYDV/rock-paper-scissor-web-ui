@@ -26,8 +26,7 @@ function App() {
   const [computerScore, setComputerScore] = useState(0);
   const [playerChoice, setPlayerChoice] = useState('rock');
   const [computerChoice, setComputerChoice] = useState('rock');
-  const [activeButton, setActiveButton] = useState(null);
-  
+  const [gameResult, setGameResult] = useState('Start the game');
 
   const play = (choice) => {
     setPlayerChoice('rock');
@@ -38,7 +37,6 @@ function App() {
       setComputerChoice(computerRandomChoice);
       determineWinner(choice, computerRandomChoice);
     }, 200);
-
   };
 
   const getRandomChoice = () => {
@@ -49,6 +47,7 @@ function App() {
 
   const determineWinner = (playerChoice, computerChoice) => {
     if (playerChoice === computerChoice) {
+      setGameResult("It's a Tie!");
       return;
     }
 
@@ -58,8 +57,10 @@ function App() {
       (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
       setPlayerScore(playerScore + 1);
+      setGameResult('You Win!');
     } else {
       setComputerScore(computerScore + 1);
+      setGameResult('You Lose!');
     }
   };
 
@@ -68,6 +69,7 @@ function App() {
     setComputerScore(0);
     setPlayerChoice('rock');
     setComputerChoice('rock');
+    setGameResult('Start the game');  
   };
 
   return (
@@ -77,6 +79,7 @@ function App() {
         <div className="player-score">Player: {playerScore}</div>
         <div className="computer-score">Computer: {computerScore}</div>
       </div>
+      {gameResult && <div className="game-result">{gameResult}</div>}
       <div className="options">
         <div className="make-selection">Make Your Selection</div>
         <div className="game-container">
@@ -94,7 +97,6 @@ function App() {
             <button 
               key={choice} 
               onClick={() => play(choice)}
-              className={choice === activeButton ? "active" : ""}
             >
               {choice.charAt(0).toUpperCase() + choice.slice(1)}
             </button>
@@ -104,7 +106,6 @@ function App() {
       <button className="reset-button" onClick={resetGame}>Reset Game</button>
     </div>
   );
-  
 }
 
 export default App;
