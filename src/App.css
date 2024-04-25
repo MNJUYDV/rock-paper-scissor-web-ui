@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+h1 {
+  margin-top: 20px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.player-score, .computer-score {
+  flex: 1;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+}
+
+.make-selection {
+  margin-bottom: 20px;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+}
+
+.choice {
+  display: inline-block;
+  margin: 0 20px;
+  text-align: center; /* Align text center */
+  vertical-align: top;
+}
+
+.choice img {
+  width: 350px; /* Set a fixed width for the images */
+  height: auto; /* Maintain aspect ratio */
+  height: 250px;
+}
+
+.choice span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Add this to your App.css */
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #cdca21; /* Default gray color */
+  color: #010b03;
+}
+
+button.active {
+  background-color: #8fe291; /* Light gray color when active */
+}
+
+
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
