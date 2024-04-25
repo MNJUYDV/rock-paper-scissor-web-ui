@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import rockImage from './images/rock.png';
@@ -36,6 +36,23 @@ function App() {
   const loseAudio = new Audio(loseSound);
   const tieAudio = new Audio(tieSound);
 
+  useEffect(() => {
+    // Shake rock images when the game starts or resets
+    const shakeRockImages = () => {
+      const rockImages = document.querySelectorAll('.choice img');
+      rockImages.forEach((img) => {
+        img.classList.add('shake');
+      });
+      setTimeout(() => {
+        rockImages.forEach((img) => {
+          img.classList.remove('shake');
+        });
+      }, 500); // Duration of the shaking animation
+    };
+
+    shakeRockImages();
+  }, [playerChoice, computerChoice]);
+
   const play = (choice) => {
     setPlayerChoice('rock');
     setComputerChoice('rock');
@@ -44,7 +61,7 @@ function App() {
       setPlayerChoice(choice);
       setComputerChoice(computerRandomChoice);
       determineWinner(choice, computerRandomChoice);
-    }, 200);
+    }, 500);
   };
 
   const getRandomChoice = () => {

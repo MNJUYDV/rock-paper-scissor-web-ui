@@ -8,20 +8,17 @@ h1 {
 }
 
 .scoreboard {
-  margin-top: 30px;
+  margin-top: 0px; 
   display: flex;
-  justify-content: space-between;
+  justify-content: center; 
+  align-items: center;
+  gap: 50px;
 }
 
-.player-score
-{
-  margin: 0 639px;
-}
-
+.player-score,
 .computer-score {
-  margin-inline: auto;
+  margin: 0; /* Remove the specific margin to let flexbox handle the positioning */
 }
-
 
 .options {
   display: flex;
@@ -86,4 +83,20 @@ button.active {
   font-size: 24px;
   color: red; /* Change the color to make it flashy */
   margin-top: 20px; /* Add some margin to separate it from the selection */
+}
+
+.shake {
+  animation: shakeAnimation 0.2s infinite;
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
