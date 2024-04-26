@@ -18,8 +18,8 @@ function ViewStatistics() {
       <h2>Player Statistics</h2>
       <ul>
         {players.map(player => (
-          <li key={player.id}>
-            {player.name} - Wins: {player.wins}, Losses: {player.losses}, Ties: {player.ties}
+          <li key={player.player_name}>
+            {player.player_name} - Wins: {player.wins}, Losses: {player.losses}, Ties: {player.ties}
           </li>
         ))}
       </ul>
