@@ -1,0 +1,57 @@
+
+
+
+/* App.css */
+
+/* Styles for the home page */
+.home-page {
+    text-align: left; /* Align everything to the left */
+    padding: 20px; /* Add padding to the container */
+  }
+  
+  .home-page h1 {
+    margin-top: 0; /* Remove margin from the top */
+    margin-left: 1010px
+  }
+  
+  /* Styles for the buttons */
+  .button-container {
+    display: flex;
+    gap: 90px; /* Adjust the gap between buttons */
+    margin-top: 80px; /* Add margin for spacing from the title */
+    margin-left: 960px;
+  }
+  
+  .play-game,
+  .view-statistics {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 20px; /* Adjust padding */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition-duration: 0.4s;
+  }
+  
+  .play-game:hover,
+  .view-statistics:hover {
+    background-color: #45a049;
+  }
+  
+  .play-game a,
+  .view-statistics a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Button focus effect */
+  .play-game:focus,
+  .view-statistics:focus {
+    outline: none;
+  }
+  
+  
