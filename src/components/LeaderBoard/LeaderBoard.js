@@ -1,21 +1,18 @@
-// LeaderBoard.js
-
 import React, { useState, useEffect } from 'react';
-import './LeaderBoard.css'
-import '../../shared/Buttons.css'
-import '../../shared/Headers.css'
-
+import './LeaderBoard.css';
+import '../../shared/Buttons.css';
+import '../../shared/Headers.css';
 import { useNavigate } from 'react-router-dom';
 
 function LeaderBoard() {
-  const [players, setPlayers] = useState([]);
+  const [leaderboard, setLeaderBoard] = useState([]);
   const navigate = useNavigate(); // Change variable name to navigate
 
   useEffect(() => {
     // Fetch player details from the backend API
-    fetch('http://127.0.0.1:5000/players')
+    fetch('http://127.0.0.1:5000/leaderboard')
       .then(response => response.json())
-      .then(data => setPlayers(data))
+      .then(data => setLeaderBoard(data.leaderboard_stats))
       .catch(error => console.error('Error fetching player details:', error));
   }, []);
 
@@ -24,17 +21,16 @@ function LeaderBoard() {
   };
 
   return (
-    <div class = 'leaderboard'>
-      <h1 class = "h1">Player Statistics</h1>
+    <div className="leaderboard">
+      <h1 className="h1">Player Statistics</h1>
       <ul>
-        {players.map(player => (
-          <li key={player.player_name}>
-            {player.player_name} - Wins: {player.wins}, Losses: {player.losses}, Ties: {player.ties}
+        {leaderboard.map((entry, index) => (
+          <li key={index}>
+            {entry.player_name} - Wins: {entry.wins}, Losses: {entry.losses}, Ties: {entry.ties}
           </li>
         ))}
       </ul>
-      <button className = "button back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
-
+      <button className="button back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
     </div>
   );
 }

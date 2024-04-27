@@ -105,12 +105,14 @@ function PlayGame() {
   };
 
   const handleGoBack = () => {
-    fetch('http://127.0.0.1:5000/game-status', {
+    console.log("Came here")
+    fetch('http://127.0.0.1:5000/leaderboard', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
+        player_name: playerName,
         player_score: playerScore,
         computer_score: computerScore,
       }),
