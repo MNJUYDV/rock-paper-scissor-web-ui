@@ -1,10 +1,11 @@
+// App.js
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PlayerNameInput from '../PlayerNameInput/PlayerNameInput';
-import PlayGame from '../PlayGame/PlayGame';
-import ViewStatistics from '../LeaderBoard/LeaderBoard';
-import './HomePage.css';
-import '../../components/Shared.css'
+import PlayerNameInput from './pages/PlayerNameInput/PlayerNameInput';
+import PlayGame from './pages/PlayGame/PlayGame';
+import ViewStatistics from './pages/LeaderBoard/LeaderBoard';
+import HomePage from './pages/Home/HomePage';
 
 function App() {
   return (
@@ -23,18 +24,6 @@ function App() {
         <Route path="/view-statistics" element={<ViewStatistics />} />
       </Routes>
     </Router>
-  );
-}
-
-// Home Page Component
-function HomePage() {
-  return (
-    <div className="home-page">
-      <div className='button-container'>
-        <button className='button'><a href="/play-game">Play Now</a></button>
-        <button className='button'><a href="/view-statistics">LeaderBoard</a></button>
-      </div>
-    </div>
   );
 }
 
