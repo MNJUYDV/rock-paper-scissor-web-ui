@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PlayerNameInput from '../../PlayerNameInput';
-import PlayGame from '../../PlayGame';
-import ViewStatistics from '../../LeaderBoard';
+import PlayerNameInput from '../PlayerNameInput/PlayerNameInput';
+import PlayGame from '../PlayGame/PlayGame';
+import ViewStatistics from '../LeaderBoard/LeaderBoard';
 import './HomePage.css'; // Import CSS file
 
 function App() {

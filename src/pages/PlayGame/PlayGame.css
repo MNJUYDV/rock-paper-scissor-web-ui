@@ -3,7 +3,7 @@
     flex-direction: column; /* Column layout */
     align-items: center; /* Center content horizontally */
     height: 100vh; /* Set height to fill the viewport */
-    background-image: url('./assets/images/playerInputBackground.png'); /* Set the background image */
+    background-image: url('../../assets/images/playerInputBackground.png'); /* Set the background image */
     background-size: cover; /* Cover the entire background */
   }
 
