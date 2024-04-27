@@ -1,7 +1,7 @@
 // PlayGame.js
 
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './PlayGame.css';
 
 import rockImage from './images/rock.png';
 import paperImage from './images/paper.png';
@@ -109,9 +109,9 @@ function PlayGame() {
   };
 
   return (
-    <div className="App">
+    <div className="play-game">
       <div className="scoreboard">
-        <div className="player-score">Player: {playerScore}</div>
+        <div className="player-score">{playerName}: {playerScore}</div>
         <div className="computer-score">Computer: {computerScore}</div>
       </div>
       {gameResult && <div className="game-result">{gameResult}</div>}
