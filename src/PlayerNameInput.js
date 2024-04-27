@@ -29,7 +29,7 @@ function PlayerNameInput() {
         value={playerName}
         onChange={(e) => setPlayerName(e.target.value)}
       />
-      <button onClick={handleStartGame}>Start Game</button>
+      <button class = "play-game" onClick={handleStartGame}>Start Game</button>
     </div>
     
   );

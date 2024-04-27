@@ -32,7 +32,7 @@ function HomePage() {
   return (
     <div className="home-page">
       <div className='button-container'>
-        <button className='play-game'><a href="/play-game">Start Game</a></button>
+        <button className='play-game'><a href="/play-game">Play Now</a></button>
         <button className='view-statistics'><a href="/view-statistics">LeaderBoard</a></button>
       </div>
     </div>

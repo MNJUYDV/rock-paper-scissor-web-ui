@@ -130,6 +130,7 @@ function PlayGame() {
           {Object.keys(playerChoices).map((choice) => (
             <button 
               key={choice} 
+              className = "play-game"
               onClick={() => play(choice)}
             >
               {choice.charAt(0).toUpperCase() + choice.slice(1)}
