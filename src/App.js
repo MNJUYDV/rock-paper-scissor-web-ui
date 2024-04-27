@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PlayerNameInput from './PlayerNameInput';
 import PlayGame from './PlayGame';
-import ViewStatistics from './ViewStatistics';
+import ViewStatistics from './LeaderBoard';
 import './HomePage.css'; // Import CSS file
 
 function App() {

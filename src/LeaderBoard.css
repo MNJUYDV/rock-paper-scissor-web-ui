@@ -1,0 +1,31 @@
+/* App.css */
+
+/* Styles for the home page */
+.leaderboard {
+    text-align: left; /* Align everything to the left */
+    padding: 20px; /* Add padding to the container */
+    background-image: url('./images/lb-bk.png'); /* Set the background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height to full viewport height */
+  }
+  
+  .leaderboard h2 {
+    margin-top: 50px; /* Remove margin from the top */
+    margin-left: 1000px;
+    color: white;
+    font-family: fantasy;
+    font-size: xx-large;
+  }
+
+  .leaderboard li {
+    color: white;
+    font-family: fantasy;
+    font-size: x-large;
+    margin-left: 900px;
+  }
+
+  .leaderboard .back-button {
+    margin-left: 1060px;
+    margin-top: auto;
+  }

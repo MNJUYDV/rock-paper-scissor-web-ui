@@ -1,9 +1,12 @@
-// ViewStatistics.js
+// LeaderBoard.js
 
 import React, { useState, useEffect } from 'react';
+import './LeaderBoard.css'
+import { useNavigate } from 'react-router-dom';
 
-function ViewStatistics() {
+function LeaderBoard() {
   const [players, setPlayers] = useState([]);
+  const navigate = useNavigate(); // Change variable name to navigate
 
   useEffect(() => {
     // Fetch player details from the backend API
@@ -13,8 +16,12 @@ function ViewStatistics() {
       .catch(error => console.error('Error fetching player details:', error));
   }, []);
 
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
   return (
-    <div>
+    <div class = 'leaderboard'>
       <h2>Player Statistics</h2>
       <ul>
         {players.map(player => (
@@ -23,8 +30,10 @@ function ViewStatistics() {
           </li>
         ))}
       </ul>
+      <button className = "back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
+
     </div>
   );
 }
 
-export default ViewStatistics;
+export default LeaderBoard;
