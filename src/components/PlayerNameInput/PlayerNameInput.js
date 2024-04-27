@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PlayerNameInput.css'
-import '../../components/Buttons.css'
+import '../../shared/Buttons.css'
  
 
 function PlayerNameInput() {

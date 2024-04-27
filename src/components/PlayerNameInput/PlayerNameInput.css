@@ -1,0 +1,20 @@
+.player-name-input {
+    text-align: left;
+    padding: 20px;
+    background-image: url('../../assets/images/playerInputBackground.png');
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+  }
+  
+  .player-name-input h2 {
+    margin-top: 200px;
+    margin-left: 1100px;
+    color: white;
+    font-family: fantasy;
+    font-size: xx-large;
+  }
+
+  .player-name-input .text-holder {
+    margin-left: 1100px;
+  }

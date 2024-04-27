@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import './LeaderBoard.css'
-import '../../components/Buttons.css'
-import '../../components/Headers.css'
+import '../../shared/Buttons.css'
+import '../../shared/Headers.css'
 
 import { useNavigate } from 'react-router-dom';
 

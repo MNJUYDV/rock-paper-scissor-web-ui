@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './PlayGame.css';
-import '../../components/Buttons.css'
+import '../../shared/Buttons.css'
 
 import rockImage from '../../assets/images/rock.png';
 import paperImage from '../../assets/images/paper.png';

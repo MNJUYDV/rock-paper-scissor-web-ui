@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import PlayerNameInput from './pages/PlayerNameInput/PlayerNameInput';
-import PlayGame from './pages/PlayGame/PlayGame';
-import LeaderBoard from './pages/LeaderBoard/LeaderBoard';
-import HomePage from './pages/Home/HomePage';
+import PlayerNameInput from './components/PlayerNameInput/PlayerNameInput';
+import PlayGame from './components/PlayGame/PlayGame';
+import LeaderBoard from './components/LeaderBoard/LeaderBoard';
+import HomePage from './components/Home/HomePage';
 
 function App() {
   return (
