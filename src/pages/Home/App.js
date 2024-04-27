@@ -1,11 +1,10 @@
-// App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PlayerNameInput from '../PlayerNameInput/PlayerNameInput';
 import PlayGame from '../PlayGame/PlayGame';
 import ViewStatistics from '../LeaderBoard/LeaderBoard';
-import './HomePage.css'; // Import CSS file
+import './HomePage.css';
+import '../../components/Shared.css'
 
 function App() {
   return (
@@ -32,8 +31,8 @@ function HomePage() {
   return (
     <div className="home-page">
       <div className='button-container'>
-        <button className='play-game'><a href="/play-game">Play Now</a></button>
-        <button className='view-statistics'><a href="/view-statistics">LeaderBoard</a></button>
+        <button className='button'><a href="/play-game">Play Now</a></button>
+        <button className='button'><a href="/view-statistics">LeaderBoard</a></button>
       </div>
     </div>
   );

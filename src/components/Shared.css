@@ -1,0 +1,39 @@
+.button {
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4);
+    transition-duration: 0.4s;
+    font-family: 'fantasy';
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 100px;
+    margin-top: 590px;
+    margin-left: 850px;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+    box-shadow: 5px 5px 12px 0 rgba(0, 0, 0, 0.6);
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  .h1 {
+    margin-top: 20px;
+    margin-left: 560px;
+    color: white;
+  }
+  
