@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PlayerNameInput from './pages/PlayerNameInput/PlayerNameInput';
 import PlayGame from './pages/PlayGame/PlayGame';
-import ViewStatistics from './pages/LeaderBoard/LeaderBoard';
+import LeaderBoard from './pages/LeaderBoard/LeaderBoard';
 import HomePage from './pages/Home/HomePage';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/play-game/play" element={<PlayGame />} />
 
         {/* Route for View Statistics */}
-        <Route path="/view-statistics" element={<ViewStatistics />} />
+        <Route path="/leaderboard" element={<LeaderBoard />} />
       </Routes>
     </Router>
   );

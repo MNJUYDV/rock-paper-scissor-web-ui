@@ -8,9 +8,9 @@ import '../../components/Shared.css'
 function HomePage() {
   return (
     <div className="home-page">
-      <div className='button-container'>
+      <div className='button-container home-page-button-container'>
         <Link to="/play-game" className='button'>Play Now</Link>
-        <Link to="/view-statistics" className='button'>LeaderBoard</Link>
+        <Link to="/leaderboard" className='button'>LeaderBoard</Link>
       </div>
     </div>
   );
