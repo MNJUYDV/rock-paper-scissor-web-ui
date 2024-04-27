@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import './LeaderBoard.css'
-import '../../components/Shared.css'
+import '../../components/Buttons.css'
+import '../../components/Headers.css'
+
 import { useNavigate } from 'react-router-dom';
 
 function LeaderBoard() {
@@ -23,7 +25,7 @@ function LeaderBoard() {
 
   return (
     <div class = 'leaderboard'>
-      <h1>Player Statistics</h1>
+      <h1 class = "h1">Player Statistics</h1>
       <ul>
         {players.map(player => (
           <li key={player.player_name}>

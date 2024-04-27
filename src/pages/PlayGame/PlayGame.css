@@ -1,5 +1,3 @@
-@import url('../../components/Shared.css');
-
 .game {
     display: flex;
     flex-direction: column;
@@ -67,9 +65,9 @@
     animation: shakeAnimation 0.2s infinite;
   }
 
-.back-button {
-    margin-left: 280px;
-    margin-top: 80px;
+.play-game-back-button {
+    margin-left: 283px;
+    margin-top: 70px;
   }
   
   @keyframes shakeAnimation {

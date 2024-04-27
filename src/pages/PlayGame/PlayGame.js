@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './PlayGame.css';
+import '../../components/Buttons.css'
 
 import rockImage from '../../assets/images/rock.png';
 import paperImage from '../../assets/images/paper.png';
@@ -156,7 +157,7 @@ function PlayGame() {
           ))}
         </div>
       </div>
-      <button className = "button back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
+      <button className = "button play-game-back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
     </div>
   );
 }
