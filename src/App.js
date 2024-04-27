@@ -31,10 +31,9 @@ function App() {
 function HomePage() {
   return (
     <div className="home-page">
-      <h1>Rock Paper Scissors</h1>
       <div className='button-container'>
-        <button className='play-game'><a href="/play-game">Play Game</a></button>
-        <button className='view-statistics'><a href="/view-statistics">View Statistics</a></button>
+        <button className='play-game'><a href="/play-game">Start Game</a></button>
+        <button className='view-statistics'><a href="/view-statistics">LeaderBoard</a></button>
       </div>
     </div>
   );
