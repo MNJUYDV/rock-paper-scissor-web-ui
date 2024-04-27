@@ -3,17 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import './PlayGame.css';
 
-import rockImage from './images/rock.png';
-import paperImage from './images/paper.png';
-import scissorsImage from './images/scissor.png';
+import rockImage from './assets/images/rock.png';
+import paperImage from './assets/images/paper.png';
+import scissorsImage from './assets/images/scissor.png';
 
-import rockImageInverted from './images/rockI.png';
-import paperImageInverted from './images/paperI.png';
-import scissorsImageInverted from './images/scissorI.png';
+import rockImageInverted from './assets/images/rockI.png';
+import paperImageInverted from './assets/images/paperI.png';
+import scissorsImageInverted from './assets/images/scissorI.png';
 
-import winSound from './sounds/win.mp3';
-import loseSound from './sounds/lose.mp3';
-import tieSound from './sounds/tie.mp3';
+import winSound from './assets/sounds/win.mp3';
+import loseSound from './assets/sounds/lose.mp3';
+import tieSound from './assets/sounds/tie.mp3';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
