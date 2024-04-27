@@ -6,6 +6,13 @@
     background-image: url('./images/playerInputBackground.png'); /* Set the background image */
     background-size: cover; /* Cover the entire background */
   }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top:90px
+  }
   
   h1 {
     margin-top: 20px;
@@ -57,7 +64,7 @@
     background-color: #007BFF; /* Blue background to match the text */
     border: none;
     color: white; /* White text color */
-    padding: 14px 40px; /* Larger padding for a bigger button */
+    padding: 10px 22px; /* Larger padding for a bigger button */
     text-align: center;
     text-decoration: none;
     font-size: 24px; /* Larger font size for better visibility */
@@ -65,23 +72,15 @@
     border-radius: 5px; /* Slight rounding of corners */
     box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
     transition-duration: 0.4s;
-    font-family: 'Arial', sans-serif; /* Adjust font-family if needed */
+    font-family: 'fantasy'; /* Adjust font-family if needed */
     font-weight: bold; /* Bold font weight */
     letter-spacing: 1px; /* Spacing between letters */
-    margin-left: 80px;
+    margin-left: 115px;
   }
   
   button.active {
     background-color: #8fe291; /* Light gray color when active */
   }
-  
-  .reset-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #52a6df;
-  }
-  
   
   .make-selection {
     margin-bottom: 20px;
@@ -93,7 +92,8 @@
     font-size: 24px;
     font-family: fantasy;
     color: rgb(251, 255, 0); /* Change the color to make it flashy */
-    margin-top: 20px; /* Add some margin to separate it from the selection */
+    margin-top: 60px; /* Add some margin to separate it from the selection */
+    margin-left: 200px;
   }
   
   .shake {
@@ -104,7 +104,7 @@
     background-color: #007BFF; /* Blue background to match the text */
     border: none;
     color: white; /* White text color */
-    padding: 14px 40px; /* Larger padding for a bigger button */
+    padding: 10px 22px; /* Larger padding for a bigger button */
     text-align: center;
     text-decoration: none;
     font-size: 24px; /* Larger font size for better visibility */
@@ -112,10 +112,10 @@
     border-radius: 5px; /* Slight rounding of corners */
     box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
     transition-duration: 0.4s;
-    font-family: 'Arial', sans-serif; /* Adjust font-family if needed */
+    font-family: 'fantasy'; /* Adjust font-family if needed */
     font-weight: bold; /* Bold font weight */
     letter-spacing: 1px; /* Spacing between letters */
-    margin-left: -19px;
+    margin-left: 189px;
     margin-top: 80px;
   }
   

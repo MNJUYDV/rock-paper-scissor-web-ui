@@ -15,7 +15,7 @@
     margin-left: 1100px;
     color: white;
     font-family: fantasy;
-    font-size: xxx-large;
+    font-size: xx-large;
   }
 
   .player-name-input .text-holder {
@@ -40,7 +40,7 @@
     background-color: #007BFF; /* Blue background to match the text */
     border: none;
     color: white; /* White text color */
-    padding: 20px 40px; /* Larger padding for a bigger button */
+    padding: 10px 22px; /* Larger padding for a bigger button */
     text-align: center;
     text-decoration: none;
     font-size: 24px; /* Larger font size for better visibility */
@@ -48,7 +48,7 @@
     border-radius: 5px; /* Slight rounding of corners */
     box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
     transition-duration: 0.4s;
-    font-family: 'Arial', sans-serif; /* Adjust font-family if needed */
+    font-family: 'fantasy'; /* Adjust font-family if needed */
     font-weight: bold; /* Bold font weight */
     letter-spacing: 1px; /* Spacing between letters */
   }

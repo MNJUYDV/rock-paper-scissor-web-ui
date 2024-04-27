@@ -103,14 +103,6 @@ function PlayGame() {
     }
   };
 
-  const resetGame = () => {
-    setPlayerScore(0);
-    setComputerScore(0);
-    setPlayerChoice('rock');
-    setComputerChoice('rock');
-    setGameResult('Let\'s Begin!');  
-  };
-
   const handleGoBack = () => {
     navigate(-1); // Go back to the previous page
   };
