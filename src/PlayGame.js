@@ -15,6 +15,7 @@ import winSound from './sounds/win.mp3';
 import loseSound from './sounds/lose.mp3';
 import tieSound from './sounds/tie.mp3';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const playerChoices = {
   rock: rockImage,
@@ -40,6 +41,8 @@ function PlayGame() {
   const winAudio = new Audio(winSound);
   const loseAudio = new Audio(loseSound);
   const tieAudio = new Audio(tieSound);
+  const navigate = useNavigate(); // Change variable name to navigate
+
 
   useEffect(() => {
     // Shake rock images when the game starts or resets
@@ -108,21 +111,21 @@ function PlayGame() {
     setGameResult('Let\'s Begin!');  
   };
 
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
   return (
     <div className="game">
-      <div className="scoreboard">
-        <div className="player-score">{playerName}: {playerScore}</div>
-        <div className="computer-score">Computer: {computerScore}</div>
-      </div>
       {gameResult && <div className="game-result">{gameResult}</div>}
       <div className="options">
         <div className="game-container">
           <div className="choice player">
-            <span>{playerName}</span>
+            <span>{playerName}: {playerScore}</span>
             <img src={playerChoices[playerChoice]} alt="Player choice" />
           </div>
           <div className="choice computer">
-            <span>Computer</span>
+            <span>Computer: {computerScore}</span>
             <img src={computerChoices[computerChoice]} alt="Computer choice" />
           </div>
         </div>
@@ -130,7 +133,7 @@ function PlayGame() {
           {Object.keys(playerChoices).map((choice) => (
             <button 
               key={choice} 
-              className = "play-game"
+              className = "move"
               onClick={() => play(choice)}
             >
               {choice.charAt(0).toUpperCase() + choice.slice(1)}
@@ -138,7 +141,7 @@ function PlayGame() {
           ))}
         </div>
       </div>
-      <button className="reset-button" onClick={resetGame}>Reset Game</button>
+      <button className = "back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
     </div>
   );
 }

@@ -1,7 +1,6 @@
 .game {
     display: flex; /* Use flexbox to make the content fill the viewport */
     flex-direction: column; /* Column layout */
-    justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     height: 100vh; /* Set height to fill the viewport */
     background-image: url('./images/playerInputBackground.png'); /* Set the background image */
@@ -31,16 +30,7 @@
     display: flex;
     flex-direction: column;
   }
-  
-  .make-selection {
-    margin-bottom: 20px;
-  }
-  
-  .game-container {
-    display: flex;
-    justify-content: center;
-  }
-  
+
   .choice {
     display: inline-block;
     margin: 0 20px;
@@ -57,15 +47,28 @@
   .choice span {
     display: block;
     margin-bottom: 10px;
+    font-family: fantasy;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
   }
   
-  button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #35e222; /* Default gray color */
-    color: #010b03;
-    border-radius: 20px; /* Adjust the value as needed for the desired roundness */
+  .move {
+    background-color: #007BFF; /* Blue background to match the text */
+    border: none;
+    color: white; /* White text color */
+    padding: 14px 40px; /* Larger padding for a bigger button */
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px; /* Larger font size for better visibility */
+    cursor: pointer;
+    border-radius: 5px; /* Slight rounding of corners */
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+    transition-duration: 0.4s;
+    font-family: 'Arial', sans-serif; /* Adjust font-family if needed */
+    font-weight: bold; /* Bold font weight */
+    letter-spacing: 1px; /* Spacing between letters */
+    margin-left: 80px;
   }
   
   button.active {
@@ -88,12 +91,32 @@
   .game-result {
     font-weight: bold;
     font-size: 24px;
+    font-family: fantasy;
     color: rgb(251, 255, 0); /* Change the color to make it flashy */
     margin-top: 20px; /* Add some margin to separate it from the selection */
   }
   
   .shake {
     animation: shakeAnimation 0.2s infinite;
+  }
+
+  .back-button {
+    background-color: #007BFF; /* Blue background to match the text */
+    border: none;
+    color: white; /* White text color */
+    padding: 14px 40px; /* Larger padding for a bigger button */
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px; /* Larger font size for better visibility */
+    cursor: pointer;
+    border-radius: 5px; /* Slight rounding of corners */
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+    transition-duration: 0.4s;
+    font-family: 'Arial', sans-serif; /* Adjust font-family if needed */
+    font-weight: bold; /* Bold font weight */
+    letter-spacing: 1px; /* Spacing between letters */
+    margin-left: -19px;
+    margin-top: 80px;
   }
   
   @keyframes shakeAnimation {
