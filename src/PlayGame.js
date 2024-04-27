@@ -104,6 +104,29 @@ function PlayGame() {
   };
 
   const handleGoBack = () => {
+    fetch('http://127.0.0.1:5000/game-status', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        player_score: playerScore,
+        computer_score: computerScore,
+      }),
+    })
+      .then(response => {
+        if (response.ok) {
+          // Success
+          console.log('Scores submitted successfully');
+        } else {
+          // Handle errors
+          console.error('Failed to submit scores');
+        }
+      })
+      .catch(error => {
+        // Handle errors
+        console.error('Error:', error);
+      });
     navigate(-1); // Go back to the previous page
   };
 
