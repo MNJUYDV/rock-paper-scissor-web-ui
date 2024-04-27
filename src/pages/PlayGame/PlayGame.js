@@ -144,11 +144,11 @@ function PlayGame() {
             <img src={computerChoices[computerChoice]} alt="Computer choice" />
           </div>
         </div>
-        <div className="buttons">
+        <div className="choice">
           {Object.keys(playerChoices).map((choice) => (
             <button 
               key={choice} 
-              className = "move"
+              className = "button"
               onClick={() => play(choice)}
             >
               {choice.charAt(0).toUpperCase() + choice.slice(1)}
@@ -156,7 +156,7 @@ function PlayGame() {
           ))}
         </div>
       </div>
-      <button className = "back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
+      <button className = "button back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
     </div>
   );
 }
