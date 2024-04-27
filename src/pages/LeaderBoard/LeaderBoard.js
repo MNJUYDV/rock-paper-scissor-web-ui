@@ -31,7 +31,7 @@ function LeaderBoard() {
           </li>
         ))}
       </ul>
-      <button className = "back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
+      <button className = "button back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
 
     </div>
   );
