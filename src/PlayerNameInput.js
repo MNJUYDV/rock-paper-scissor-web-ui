@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './PlayerNameInput.css'
 
 function PlayerNameInput() {
   const [playerName, setPlayerName] = useState('');
@@ -19,10 +20,11 @@ function PlayerNameInput() {
   };
 
   return (
-    <div>
-      <h2>Enter Your Player Name</h2>
+    <div class = "player-name-input">
+      <h2>Player's Name</h2>
       <input
         type="text"
+        class = "text-holder"
         placeholder="Enter your name"
         value={playerName}
         onChange={(e) => setPlayerName(e.target.value)}

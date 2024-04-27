@@ -1,0 +1,68 @@
+/* App.css */
+
+/* Styles for the home page */
+.player-name-input {
+    text-align: left; /* Align everything to the left */
+    padding: 20px; /* Add padding to the container */
+    background-image: url('./images/playerInputBackground.png'); /* Set the background image */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Set the height to full viewport height */
+  }
+  
+  .player-name-input h2 {
+    margin-top: 200px; /* Remove margin from the top */
+    margin-left: 1100px;
+    color: white;
+  }
+
+  .player-name-input .text-holder {
+    margin-left: 1100px;
+  }
+  
+  /* Styles for the buttons */
+  .button-container {
+    display: flex;
+    gap: 100px; /* Adjust the gap between buttons */
+    margin-top: 590px; /* Add margin for spacing from the title */
+    margin-left: 850px;
+  }
+  
+  .play-game a,
+  .view-statistics a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .play-game, .view-statistics {
+    background-color: #007BFF; /* Blue background to match the text */
+    border: none;
+    color: white; /* White text color */
+    padding: 20px 40px; /* Larger padding for a bigger button */
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px; /* Larger font size for better visibility */
+    cursor: pointer;
+    border-radius: 5px; /* Slight rounding of corners */
+    box-shadow: 3px 3px 6px 0 rgba(0, 0, 0, 0.4); /* Darker shadow for depth */
+    transition-duration: 0.4s;
+    font-family: 'Arial', sans-serif; /* Adjust font-family if needed */
+    font-weight: bold; /* Bold font weight */
+    letter-spacing: 1px; /* Spacing between letters */
+  }
+  
+  .play-game:hover, .view-statistics:hover {
+    background-color: #0056b3; /* A slightly darker blue on hover */
+    box-shadow: 5px 5px 12px 0 rgba(0, 0, 0, 0.6); /* Enhance shadow on hover */
+  }
+  
+  /* Focus styles can remain the same or be updated as desired */
+  .play-game:focus {
+    outline: none; /* Removes the default focus outline */
+    /* Optionally add a style for the focus state, such as a border or change in shadow */
+  }
+  
+  .play-game {
+    margin-left: 20px;
+  }
+  

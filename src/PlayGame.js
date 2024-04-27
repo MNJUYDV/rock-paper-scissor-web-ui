@@ -33,7 +33,7 @@ function PlayGame() {
   const [computerScore, setComputerScore] = useState(0);
   const [playerChoice, setPlayerChoice] = useState('rock');
   const [computerChoice, setComputerChoice] = useState('rock');
-  const [gameResult, setGameResult] = useState('Start the game');
+  const [gameResult, setGameResult] = useState('Let\'s Begin!');
   const location = useLocation();
   const [playerName, setPlayerName] = useState('');
 
@@ -105,19 +105,17 @@ function PlayGame() {
     setComputerScore(0);
     setPlayerChoice('rock');
     setComputerChoice('rock');
-    setGameResult('Start the game');  
+    setGameResult('Let\'s Begin!');  
   };
 
   return (
     <div className="App">
-      <h1>Rock Paper Scissors</h1>
       <div className="scoreboard">
         <div className="player-score">Player: {playerScore}</div>
         <div className="computer-score">Computer: {computerScore}</div>
       </div>
       {gameResult && <div className="game-result">{gameResult}</div>}
       <div className="options">
-        <div className="make-selection">Make Your Selection</div>
         <div className="game-container">
           <div className="choice player">
             <span>{playerName}</span>
