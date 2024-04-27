@@ -10,7 +10,7 @@ function LeaderBoard() {
 
   useEffect(() => {
     // Fetch player details from the backend API
-    fetch('http://127.0.0.1:5000/leaderboard')
+    fetch('http://127.0.0.1:5000/api/v1/leaderboard')
       .then(response => response.json())
       .then(data => setLeaderBoard(data.leaderboard_stats))
       .catch(error => console.error('Error fetching player details:', error));
