@@ -11,8 +11,9 @@
 }
 
 .home-page h1 {
-  margin-top: 0; /* Remove margin from the top */
-  margin-left: 1010px;
+  margin-top: 20px; /* Remove margin from the top */
+  margin-left: 560px;
+  color: white;
 }
 
 /* Styles for the buttons */

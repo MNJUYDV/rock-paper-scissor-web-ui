@@ -1,4 +1,4 @@
-.play-game {
+.game {
     display: flex; /* Use flexbox to make the content fill the viewport */
     flex-direction: column; /* Column layout */
     justify-content: center; /* Center content vertically */

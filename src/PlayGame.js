@@ -109,7 +109,7 @@ function PlayGame() {
   };
 
   return (
-    <div className="play-game">
+    <div className="game">
       <div className="scoreboard">
         <div className="player-score">{playerName}: {playerScore}</div>
         <div className="computer-score">Computer: {computerScore}</div>
