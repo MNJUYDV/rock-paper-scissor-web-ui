@@ -18,7 +18,6 @@ import tieSound from '../../assets/sounds/tie.mp3';
 
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import Header from '../shared/Header'; 
 
 import {CREATE_LEADERBOARD_URL} from '../../config'
 
@@ -36,12 +35,13 @@ const computerChoices = {
 
 function PlayGame() {
   const [playerScore, setPlayerScore] = useState(0);
-  const [computerScore, setComputerScore] = useState(0);
+  const [player2Score, setplayer2Score] = useState(0);
   const [playerChoice, setPlayerChoice] = useState('rock');
   const [computerChoice, setComputerChoice] = useState('rock');
   const [gameResult, setGameResult] = useState('Let\'s Begin!');
   const location = useLocation();
   const [playerName, setPlayerName] = useState('');
+  const [gameId, setGameId] = useState(0);
 
   const winAudio = new Audio(winSound);
   const loseAudio = new Audio(loseSound);
@@ -62,13 +62,16 @@ function PlayGame() {
       }, 500); // Duration of the shaking animation
     };
 
-      shakeRockImages();
-      const searchParams = new URLSearchParams(location.search);
-      const playerNameParam = searchParams.get('playerName');
-      setPlayerName(playerNameParam);
+    shakeRockImages();
+    const searchParams = new URLSearchParams(location.search);
+    const playerNameParam = searchParams.get('playerName');
+    setPlayerName(playerNameParam);
+    const gameIdParam = searchParams.get('gameId');
+    setGameId(gameIdParam);
   }, [playerChoice, computerChoice, location]);
 
   const play = (choice) => {
+    console.log("PlayerScore = ",playerScore);
     setPlayerChoice('rock');
     setComputerChoice('rock');
     setTimeout(() => {
@@ -101,7 +104,7 @@ function PlayGame() {
       setGameResult('You Win!');
       winAudio.play();
     } else {
-      setComputerScore(computerScore + 1);
+      setplayer2Score(player2Score + 1);
       setGameResult('You Lose!');
       loseAudio.play();
     }
@@ -114,14 +117,14 @@ function PlayGame() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        player_name: playerName,
-        player_score: playerScore,
-        computer_score: computerScore,
+        game_id: gameId,
+        player1_score: playerScore,
+        player2_score: player2Score,
       }),
     })
       .then(response => {
         if (response.ok) {
-          console.log('LeaderBoard submitted successfully');
+          console.log(response.message);
         } else {
           console.error('API Failed to submit LeaderBoard');
         }
@@ -139,7 +142,7 @@ function PlayGame() {
   const handleResetGame = () => {
     callCreateLeaderBoardAPI();
     setPlayerScore(0);
-    setComputerScore(0);
+    setplayer2Score(0);
     setGameResult("Let's Begin!");
     setPlayerChoice('rock');
     setComputerChoice('rock');
@@ -155,7 +158,7 @@ function PlayGame() {
             <img src={playerChoices[playerChoice]} alt="Player choice" />
           </div>
           <div className="choice computer">
-            <span>Computer: {computerScore}</span>
+            <span>Computer: {player2Score}</span>
             <img src={computerChoices[computerChoice]} alt="Computer choice" />
           </div>
         </div>

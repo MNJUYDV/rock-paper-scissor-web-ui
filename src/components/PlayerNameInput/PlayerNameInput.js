@@ -8,6 +8,8 @@ import Header from '../shared/Header';
 
 function PlayerNameInput() {
   const [playerName, setPlayerName] = useState('');
+  const [gameId, setGameId] = useState(null);
+
   const navigate = useNavigate();
 
   const handleStartGame = () => {
@@ -15,7 +17,7 @@ function PlayerNameInput() {
       alert('Please enter your player name.');
       return;
     }
-
+  
     fetch(START_GAME_URL, {
       method: 'POST',
       headers: {
@@ -27,33 +29,37 @@ function PlayerNameInput() {
     })
       .then(response => {
         if (response.ok) {
-          // Success
-          console.log('Game Started successfully');
+          // Parse the response JSON
+          return response.json();
         } else {
           // Handle errors
           console.error('Failed to start Game');
+          throw new Error('Failed to start Game');
         }
+      })
+      .then(data => {
+        const gameIdFromResponse = data.data.game_id;
+        setGameId(gameId);
+        navigate(`/play-game/play?playerName=${encodeURIComponent(playerName)}&gameId=${gameIdFromResponse}`);
       })
       .catch(error => {
         // Handle errors
         console.error('Error:', error);
       });
-
-    navigate(`/play-game/play?playerName=${encodeURIComponent(playerName)}`);
   };
 
   return (
-    <div class="player-name-input">
+    <div className="player-name-input">
       <Header /> {/* Include the Header component */}
       <h2>Player's Name</h2>
       <input
         type="text"
-        class = "text-holder"
+        className = "text-holder"
         placeholder="Enter your name"
         value={playerName}
         onChange={(e) => setPlayerName(e.target.value)}
       />
-      <button class = "button" onClick={handleStartGame}>Start Game</button>
+      <button className = "button" onClick={handleStartGame}>Start Game</button>
     </div>
     
   );

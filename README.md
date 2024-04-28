@@ -6,7 +6,7 @@ Docker
 You can build and run the Docker container for this application. Ensure you have Docker installed on your machine.
 
 Clone this repository to your local machine:
-git clone https://github.com/your-username/rock-paper-scissors-web-ui.git
+git clone https://github.com/MNJUYDV/rock-paper-scissors-web-ui.git
 
 Navigate to the project directory:
 cd rock-paper-scissors-web-ui
@@ -23,7 +23,7 @@ NPM
 Alternatively, you can run the application using npm.
 
 Clone this repository to your local machine:
-git clone https://github.com/your-username/rock-paper-scissors-web-ui.git
+git clone https://github.com/MNJUYDV/rock-paper-scissors-web-ui.git
 
 Navigate to the project directory:
 cd rock-paper-scissors-web-ui
