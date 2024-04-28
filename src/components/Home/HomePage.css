@@ -9,6 +9,12 @@
 
 .home-page-button-container {
   margin-left: 800px;
+  margin-top: 550px;
 }
 
 
+@media (max-width: 767px) {
+  .vertical {
+    flex-direction: column;
+  }
+}

@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
-    background-image: url('../../assets/images/playerInputBackground.png'); 
+    background-image: url('../../assets/images/lb-bk.png'); 
     background-size: cover; 
   }
 
@@ -65,9 +65,11 @@
     animation: shakeAnimation 0.2s infinite;
   }
 
-.play-game-back-button {
-    margin-left: 283px;
-    margin-top: 70px;
+  .button-container {
+    margin-top: 40px;
+    margin-left: 300px;
+    padding: 10px 10px;
+    gap: 10px
   }
   
   @keyframes shakeAnimation {

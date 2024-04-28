@@ -1,0 +1,15 @@
+.h1 {
+  margin-top: 50px; 
+  margin-left: 1000px;
+  color: white;
+  font-family: fantasy;
+  font-size: xx-large;
+  }
+
+  .top-navigation {
+    font-family: fantasy;
+    font-size: xx-large;
+    color: white;
+    display: inline-block; /* Override the display property */
+
+  }

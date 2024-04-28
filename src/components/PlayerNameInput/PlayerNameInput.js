@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PlayerNameInput.css'
-import '../../shared/Buttons.css'
- 
+import '../shared/Buttons.css'
+import { START_GAME_URL } from '../../config';
+import Header from '../shared/Header'; 
+
 
 function PlayerNameInput() {
   const [playerName, setPlayerName] = useState('');
@@ -14,7 +16,7 @@ function PlayerNameInput() {
       return;
     }
 
-    fetch('http://127.0.0.1:5000/api/v1/start-game', {
+    fetch(START_GAME_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -41,7 +43,8 @@ function PlayerNameInput() {
   };
 
   return (
-    <div class = "player-name-input">
+    <div class="player-name-input">
+      <Header /> {/* Include the Header component */}
       <h2>Player's Name</h2>
       <input
         type="text"

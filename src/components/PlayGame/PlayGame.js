@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import './PlayGame.css';
-import '../../shared/Buttons.css'
+import '../shared/Buttons.css'
 
 import rockImage from '../../assets/images/rock.png';
 import paperImage from '../../assets/images/paper.png';
@@ -15,8 +15,12 @@ import scissorsImageInverted from '../../assets/images/scissorI.png';
 import winSound from '../../assets/sounds/win.mp3';
 import loseSound from '../../assets/sounds/lose.mp3';
 import tieSound from '../../assets/sounds/tie.mp3';
+
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Header from '../shared/Header'; 
+
+import {CREATE_LEADERBOARD_URL} from '../../config'
 
 const playerChoices = {
   rock: rockImage,
@@ -46,7 +50,6 @@ function PlayGame() {
 
 
   useEffect(() => {
-    // Shake rock images when the game starts or resets
     const shakeRockImages = () => {
       const rockImages = document.querySelectorAll('.choice img');
       rockImages.forEach((img) => {
@@ -104,8 +107,8 @@ function PlayGame() {
     }
   };
 
-  const handleGoBack = () => {
-    fetch('http://127.0.0.1:5000/api/v1/leaderboard', {
+  const callCreateLeaderBoardAPI = () => {
+    fetch(CREATE_LEADERBOARD_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -118,18 +121,28 @@ function PlayGame() {
     })
       .then(response => {
         if (response.ok) {
-          // Success
-          console.log('Scores submitted successfully');
+          console.log('LeaderBoard submitted successfully');
         } else {
-          // Handle errors
-          console.error('Failed to submit scores');
+          console.error('API Failed to submit LeaderBoard');
         }
       })
       .catch(error => {
-        // Handle errors
         console.error('Error:', error);
       });
-    navigate(-1); // Go back to the previous page
+  }
+
+  const handleEndGame = () => {
+    callCreateLeaderBoardAPI();
+    navigate(`/`);
+  };
+
+  const handleResetGame = () => {
+    callCreateLeaderBoardAPI();
+    setPlayerScore(0);
+    setComputerScore(0);
+    setGameResult("Let's Begin!");
+    setPlayerChoice('rock');
+    setComputerChoice('rock');
   };
 
   return (
@@ -158,7 +171,10 @@ function PlayGame() {
           ))}
         </div>
       </div>
-      <button className = "button play-game-back-button" onClick={handleGoBack}>Back</button> {/* Add the back button */}
+      <div className="button-container">
+      <button className="button reset-game-button" onClick={handleResetGame}>Reset Game</button>
+      <button className="button end-game-button" onClick={handleEndGame}>End Game</button>
+    </div>
     </div>
   );
 }
