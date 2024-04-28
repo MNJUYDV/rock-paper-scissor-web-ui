@@ -5,7 +5,7 @@ import '../../shared/Headers.css';
 import { useNavigate } from 'react-router-dom';
 
 function LeaderBoard() {
-  const [leaderboard, setLeaderBoard] = useState([]);
+  const [leaderboard, setLeaderBoard] = useState({});
   const navigate = useNavigate(); // Change variable name to navigate
 
   useEffect(() => {
@@ -24,9 +24,9 @@ function LeaderBoard() {
     <div className="leaderboard">
       <h1 className="h1">Player Statistics</h1>
       <ul>
-        {leaderboard.map((entry, index) => (
+        {Object.entries(leaderboard).map(([playerName, stats], index) => (
           <li key={index}>
-            {entry.player_name} - Wins: {entry.wins}, Losses: {entry.losses}, Ties: {entry.ties}
+            {playerName} - Wins: {stats.wins}, Losses: {stats.losses}, Ties: {stats.ties}
           </li>
         ))}
       </ul>
