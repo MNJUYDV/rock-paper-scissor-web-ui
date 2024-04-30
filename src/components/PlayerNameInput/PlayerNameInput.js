@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './PlayerNameInput.css'
-import '../shared/Buttons.css'
-import { START_GAME_URL } from '../../config';
-import Header from '../shared/Header'; 
-
+import './PlayerNameInput.css';
+import '../shared/Buttons.css';
+import Header from '../shared/Header';
 
 function PlayerNameInput() {
   const [playerName, setPlayerName] = useState('');
   const [gameId, setGameId] = useState(null);
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (gameId) {
+      navigate('/play-game/play', { state: { playerName, gameId } });
+    }
+  }, [gameId, playerName, navigate]);
 
   const handleStartGame = () => {
     if (playerName.trim() === '') {
       alert('Please enter your player name.');
       return;
     }
-  
-    fetch(START_GAME_URL, {
+
+    fetch(`${process.env.REACT_APP_START_GAME_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,39 +32,34 @@ function PlayerNameInput() {
     })
       .then(response => {
         if (response.ok) {
-          // Parse the response JSON
           return response.json();
         } else {
-          // Handle errors
           console.error('Failed to start Game');
           throw new Error('Failed to start Game');
         }
       })
       .then(data => {
         const gameIdFromResponse = data.data.game_id;
-        setGameId(gameId);
-        navigate(`/play-game/play?playerName=${encodeURIComponent(playerName)}&gameId=${gameIdFromResponse}`);
+        setGameId(gameIdFromResponse);
       })
       .catch(error => {
-        // Handle errors
         console.error('Error:', error);
       });
   };
 
   return (
     <div className="player-name-input">
-      <Header /> {/* Include the Header component */}
+      <Header />
       <h2>Player's Name</h2>
       <input
         type="text"
-        className = "text-holder"
+        className="text-holder"
         placeholder="Enter your name"
         value={playerName}
         onChange={(e) => setPlayerName(e.target.value)}
       />
-      <button className = "button" onClick={handleStartGame}>Start Game</button>
+      <button className="button" onClick={handleStartGame}>Start Game</button>
     </div>
-    
   );
 }
 

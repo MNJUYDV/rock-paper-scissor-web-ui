@@ -66,10 +66,25 @@
   }
 
   .button-container {
-    margin-top: 40px;
-    margin-left: 300px;
+    margin-top: 80px;
+    margin-left: 200px;
     padding: 10px 10px;
     gap: 10px
+  }
+
+.reset-game-button {
+    background-color: rgb(42, 128, 8)
+  }
+
+  .end-game-button  {
+    background-color: rgb(42, 128, 8)
+  }
+
+  .label {
+    color: white;
+    font-family: fantasy;
+    font-size: xx-large;
+    margin-left: 100px;
   }
   
   @keyframes shakeAnimation {

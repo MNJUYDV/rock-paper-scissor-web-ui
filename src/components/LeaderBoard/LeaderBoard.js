@@ -3,16 +3,15 @@ import './LeaderBoard.css';
 import '../shared/Buttons.css';
 import '../shared/Headers.css';
 import { useNavigate } from 'react-router-dom';
-import { FETCH_LEADERBOARD_URL } from '../../config';
 import Header from '../shared/Header'; 
 
 function LeaderBoard() {
   const [leaderboard, setLeaderBoard] = useState({});
-  const navigate = useNavigate(); // Change variable name to navigate
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     // Fetch player details from the backend API
-    fetch(FETCH_LEADERBOARD_URL)
+    fetch(`${process.env.REACT_APP_FETCH_LEADERBOARD_URL}`)
       .then(response => response.json())
       .then(data => setLeaderBoard(data.leaderboard_stats))
       .catch(error => console.error('Error fetching player details:', error));
@@ -25,7 +24,7 @@ function LeaderBoard() {
   return (
     <div className="leaderboard">
       <Header /> {/* Include the Header component */}
-      <h1 className="h1">Player Statistics</h1>
+      <h1 className="h1">Players Statistics</h1>
       <ul>
         {Object.entries(leaderboard).map(([playerName, stats], index) => (
           <li key={index}>

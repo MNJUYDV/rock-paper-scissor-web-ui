@@ -1,3 +1,3 @@
-export const FETCH_LEADERBOARD_URL = 'http://127.0.0.1:5000/api/v1/players-stats'
-export const CREATE_LEADERBOARD_URL ='http://127.0.0.1:5000/api/v1/leaderboard'
-export const START_GAME_URL = 'http://127.0.0.1:5000/api/v1/start-game'
+export const FETCH_LEADERBOARD_URL = process.env.REACT_APP_FETCH_LEADERBOARD_URL;
+export const CREATE_LEADERBOARD_URL = process.env.REACT_APP_CREATE_LEADERBOARD_URL;
+export const START_GAME_URL = process.env.REACT_APP_START_GAME_URL;
