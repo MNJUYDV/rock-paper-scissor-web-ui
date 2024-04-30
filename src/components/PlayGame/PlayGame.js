@@ -1,5 +1,3 @@
-// PlayGame.js
-
 import React, { useState, useEffect } from 'react';
 import './PlayGame.css';
 import '../shared/Buttons.css'
@@ -16,10 +14,8 @@ import winSound from '../../assets/sounds/win.mp3';
 import loseSound from '../../assets/sounds/lose.mp3';
 import tieSound from '../../assets/sounds/tie.mp3';
 
-import { useLocation } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import {CREATE_LEADERBOARD_URL} from '../../config'
 
 const playerChoices = {
   rock: rockImage,
@@ -34,19 +30,18 @@ const computerChoices = {
 };
 
 function PlayGame() {
-  const [playerScore, setPlayerScore] = useState(0);
+  const [player1Score, setPlayer1Score] = useState(0);
   const [player2Score, setplayer2Score] = useState(0);
   const [playerChoice, setPlayerChoice] = useState('rock');
   const [computerChoice, setComputerChoice] = useState('rock');
   const [gameResult, setGameResult] = useState('Let\'s Begin!');
   const location = useLocation();
-  const [playerName, setPlayerName] = useState('');
-  const [gameId, setGameId] = useState(0);
+  const { playerName, gameId } = location.state;
 
   const winAudio = new Audio(winSound);
   const loseAudio = new Audio(loseSound);
   const tieAudio = new Audio(tieSound);
-  const navigate = useNavigate(); // Change variable name to navigate
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -61,17 +56,10 @@ function PlayGame() {
         });
       }, 500); // Duration of the shaking animation
     };
-
     shakeRockImages();
-    const searchParams = new URLSearchParams(location.search);
-    const playerNameParam = searchParams.get('playerName');
-    setPlayerName(playerNameParam);
-    const gameIdParam = searchParams.get('gameId');
-    setGameId(gameIdParam);
-  }, [playerChoice, computerChoice, location]);
+  });
 
   const play = (choice) => {
-    console.log("PlayerScore = ",playerScore);
     setPlayerChoice('rock');
     setComputerChoice('rock');
     setTimeout(() => {
@@ -100,7 +88,7 @@ function PlayGame() {
       (playerChoice === 'paper' && computerChoice === 'rock') ||
       (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
-      setPlayerScore(playerScore + 1);
+      setPlayer1Score(player1Score + 1);
       setGameResult('You Win!');
       winAudio.play();
     } else {
@@ -111,14 +99,14 @@ function PlayGame() {
   };
 
   const callCreateLeaderBoardAPI = () => {
-    fetch(CREATE_LEADERBOARD_URL, {
+    fetch(`${process.env.REACT_APP_CREATE_LEADERBOARD_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         game_id: gameId,
-        player1_score: playerScore,
+        player1_score: player1Score,
         player2_score: player2Score,
       }),
     })
@@ -141,7 +129,7 @@ function PlayGame() {
 
   const handleResetGame = () => {
     callCreateLeaderBoardAPI();
-    setPlayerScore(0);
+    setPlayer1Score(0);
     setplayer2Score(0);
     setGameResult("Let's Begin!");
     setPlayerChoice('rock');
@@ -154,7 +142,7 @@ function PlayGame() {
       <div className="options">
         <div className="game-container">
           <div className="choice player">
-            <span>{playerName}: {playerScore}</span>
+            <span>{playerName}: {player1Score}</span>
             <img src={playerChoices[playerChoice]} alt="Player choice" />
           </div>
           <div className="choice computer">
@@ -163,6 +151,7 @@ function PlayGame() {
           </div>
         </div>
         <div className="choice">
+        <div className="label">Choose:</div>
           {Object.keys(playerChoices).map((choice) => (
             <button 
               key={choice} 

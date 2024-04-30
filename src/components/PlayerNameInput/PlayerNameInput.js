@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PlayerNameInput.css'
 import '../shared/Buttons.css'
-import { START_GAME_URL } from '../../config';
 import Header from '../shared/Header'; 
 
 
 function PlayerNameInput() {
   const [playerName, setPlayerName] = useState('');
-  const [gameId, setGameId] = useState(null);
+  const [gameId, setGameId] = useState(null); 
 
   const navigate = useNavigate();
 
@@ -18,7 +17,7 @@ function PlayerNameInput() {
       return;
     }
   
-    fetch(START_GAME_URL, {
+    fetch(`${process.env.REACT_APP_START_GAME_URL}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,21 +28,18 @@ function PlayerNameInput() {
     })
       .then(response => {
         if (response.ok) {
-          // Parse the response JSON
           return response.json();
         } else {
-          // Handle errors
           console.error('Failed to start Game');
           throw new Error('Failed to start Game');
         }
       })
       .then(data => {
         const gameIdFromResponse = data.data.game_id;
-        setGameId(gameId);
-        navigate(`/play-game/play?playerName=${encodeURIComponent(playerName)}&gameId=${gameIdFromResponse}`);
+        setGameId(gameIdFromResponse);
+        navigate('/play-game/play', { state: { playerName, gameId: gameIdFromResponse } });
       })
       .catch(error => {
-        // Handle errors
         console.error('Error:', error);
       });
   };
