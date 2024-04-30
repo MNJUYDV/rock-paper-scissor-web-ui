@@ -24,7 +24,7 @@ function LeaderBoard() {
   return (
     <div className="leaderboard">
       <Header /> {/* Include the Header component */}
-      <h1 className="h1">Player Statistics</h1>
+      <h1 className="h1">Players Statistics</h1>
       <ul>
         {Object.entries(leaderboard).map(([playerName, stats], index) => (
           <li key={index}>
