@@ -11,12 +11,6 @@ git clone https://github.com/MNJUYDV/rock-paper-scissors-web-ui.git
 Navigate to the project directory:
 cd rock-paper-scissors-web-ui
 
-create a .env file at the root project and copy these URLs
-REACT_APP_FETCH_LEADERBOARD_URL=http://127.0.0.1:5000/api/v1/players-stats
-REACT_APP_CREATE_LEADERBOARD_URL=http://127.0.0.1:5000/api/v1/leaderboard
-REACT_APP_START_GAME_URL=http://127.0.0.1:5000/api/v1/start-game
-NODE_ENV=development
-
 **Build the Docker image:**
 docker build -t rock-paper-scissors-web-ui .
 
