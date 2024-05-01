@@ -128,7 +128,9 @@ function PlayGame() {
   };
 
   const handleResetGame = () => {
-    callCreateLeaderBoardAPI();
+    if (gameResult !== "Let's Begin!") {
+      callCreateLeaderBoardAPI();
+    }
     setPlayer1Score(0);
     setplayer2Score(0);
     setGameResult("Let's Begin!");
