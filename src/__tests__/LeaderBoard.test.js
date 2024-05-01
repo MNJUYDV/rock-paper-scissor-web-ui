@@ -19,8 +19,8 @@ global.MutationObserver = class {
 describe('LeaderBoard component', () => {
     test('renders player statistics correctly', async () => {
       const mockLeaderboard = {
-        'Player 1': { wins: 5, losses: 3, ties: 2 },
-        'Player 2': { wins: 3, losses: 4, ties: 1 },
+        '2': { player_name: 'Player_1', wins: 5, losses: 3, ties: 2 },
+        '3': { player_name: 'Player_2', wins: 3, losses: 4, ties: 1 },
       };
       jest.spyOn(global, 'fetch').mockResolvedValueOnce({
         json: async () => ({ leaderboard_stats: mockLeaderboard }),
@@ -32,8 +32,8 @@ describe('LeaderBoard component', () => {
         </BrowserRouter>
       );
   
-      const player1Element = await screen.findByText('Player 1 - Wins: 5, Losses: 3, Ties: 2');
-      const player2Element = await screen.findByText('Player 2 - Wins: 3, Losses: 4, Ties: 1');
+      const player1Element = await screen.findByText('Player_1 - Wins: 5, Losses: 3, Ties: 2');
+      const player2Element = await screen.findByText('Player_2 - Wins: 3, Losses: 4, Ties: 1');
   
       expect(player1Element).toBeInTheDocument();
       expect(player2Element).toBeInTheDocument();
