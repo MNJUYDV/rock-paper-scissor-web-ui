@@ -26,9 +26,9 @@ function LeaderBoard() {
       <Header /> {/* Include the Header component */}
       <h1 className="h1">Players Statistics</h1>
       <ul>
-        {Object.entries(leaderboard).map(([playerName, stats], index) => (
-          <li key={index}>
-            {playerName} - Wins: {stats.wins}, Losses: {stats.losses}, Ties: {stats.ties}
+        {Object.entries(leaderboard).map(([playerId, stats]) => (
+          <li key={playerId}>
+            {stats.player_name} - Wins: {stats.wins}, Losses: {stats.losses}, Ties: {stats.ties}
           </li>
         ))}
       </ul>
